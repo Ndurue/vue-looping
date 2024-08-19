@@ -46,7 +46,13 @@
 
 <script setup>
 import { ref, reactive, onMounted, computed } from 'vue'
+import axios from 'axios'
 
+axios
+ .get('https://jsonplaceholder.typicode.com/posts')
+ .then((response) => {
+    data.value = response.data
+  })
 
 
 
